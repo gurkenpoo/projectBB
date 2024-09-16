@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdua6br7xgrlo"]
+
+[ext_resource type="PackedScene" uid="uid://bqcyjoyv0rlqv" path="res://game/scene/objects/projectBB.blend" id="1_fxfth"]
+
+[node name="scene" type="Node3D"]
+
+[node name="projectBB" parent="." instance=ExtResource("1_fxfth")]
+
+[node name="Cealing" parent="projectBB" index="7"]
+visible = false
+
+[editable path="projectBB"]
