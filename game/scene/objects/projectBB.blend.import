@@ -50,6 +50,9 @@ _subresources={
 "PATH:Door_Group_001/CTRL_Hole_003": {
 "import/skip_import": true
 },
+"PATH:Ducha": {
+"import/skip_import": true
+},
 "PATH:Window_Group/CTRL_Hole": {
 "import/skip_import": true
 },
