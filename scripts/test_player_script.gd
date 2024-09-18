@@ -2,10 +2,16 @@ extends CharacterBody3D
 
 
 @onready var camera = $Camera3D
-@onready var raycast = $Camera3D/RayCast3D
+@onready var raycast = $Camera3D/PhysicsRaycast
 # @onready var animation_player = get_node("../scene/projectBB/Door_Group/AnimationPlayer")
+@onready var interactpos = $Camera3D/PhysicsRaycast/InteractPos
 
-const SPEED = 1.0
+
+var isHoldingObject = false;
+var heldObject = null;
+
+
+const SPEED = 1.0;
 const JUMP_VELOCITY = 2.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -55,3 +61,29 @@ func _physics_process(delta):
 		
 
 	move_and_slide()
+	if Input.is_action_just_pressed("action"):
+		interactWithDoor()
+ 
+	maintainInteraction()
+ 
+func interactWithDoor():
+ 
+	if !isHoldingObject:
+		raycast.force_raycast_update()
+ 
+		if raycast.is_colliding():
+			var collider = raycast.get_collider()
+			if collider.is_in_group("door"):
+				isHoldingObject = true
+				heldObject = collider
+ 
+	elif isHoldingObject:
+		isHoldingObject = false
+		heldObject = null
+ 
+func maintainInteraction():
+	if isHoldingObject and heldObject != null:
+		var forceDirection = interactpos.global_transform.origin - heldObject.global_transform.origin
+		forceDirection = forceDirection.normalized()
+ 
+		heldObject.apply_central_force(forceDirection * 2)
