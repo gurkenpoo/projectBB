@@ -6,7 +6,4 @@
 
 [node name="projectBB" parent="." instance=ExtResource("1_fxfth")]
 
-[node name="Cealing" parent="projectBB" index="3"]
-visible = false
-
 [editable path="projectBB"]

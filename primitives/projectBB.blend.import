@@ -32,52 +32,23 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
-"meshes": {
-"projectBB_CTRL_Hole_008": {
-"save_to_file/enabled": true
-}
-},
 "nodes": {
 "PATH:Door_Group/CTRL_Baseboard": {
 "import/skip_import": true
 },
-"PATH:Door_Group/CTRL_Hole_002": {
+"PATH:Door_Group_001": {
 "import/skip_import": true
 },
 "PATH:Door_Group_001/CTRL_Baseboard_001": {
 "import/skip_import": true
 },
-"PATH:Door_Group_001/CTRL_Hole_003": {
+"PATH:Door_Group_002": {
 "import/skip_import": true
 },
-"PATH:Door_Group_002/CTRL_Hole_009": {
-"import/skip_import": true
-},
-"PATH:Door_Group_003/CTRL_Hole_010": {
+"PATH:Door_Group_003": {
 "import/skip_import": true
 },
 "PATH:Ducha": {
-"import/skip_import": true
-},
-"PATH:Window_Group/CTRL_Hole": {
-"import/skip_import": true
-},
-"PATH:Window_Group_001/CTRL_Hole_001": {
-"import/skip_import": true
-},
-"PATH:Window_Group_002/CTRL_Hole_007": {
-"import/skip_import": true
-},
-"PATH:Window_Group_003/CTRL_Hole_004": {
-"import/skip_import": true
-},
-"PATH:Window_Group_004/CTRL_Hole_005": {
-"import/skip_import": true
-},
-"PATH:Window_Group_005/CTRL_Hole_006": {
-"import/skip_import": true
-},
-"PATH:Window_Group_006/CTRL_Hole_008": {
 "import/skip_import": true
 }
 }

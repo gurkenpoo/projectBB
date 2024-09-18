@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/RayCast3D
-
+# @onready var animation_player = get_node("../scene/projectBB/Door_Group/AnimationPlayer")
 
 const SPEED = 1.0
 const JUMP_VELOCITY = 2.0
@@ -23,11 +23,14 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * .005)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 		
+	if Input.is_action_just_pressed("action"):
+		print("hola")
 		
+	pass
 		
 func _physics_process(delta):
 	
-	print(raycast.get_collider())
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
