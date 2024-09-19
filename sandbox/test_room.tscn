@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://xc2oyhk77jqb"]
+[gd_scene load_steps=11 format=3 uid="uid://xc2oyhk77jqb"]
 
 [ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="1_tmmk3"]
 [ext_resource type="PackedScene" uid="uid://b2x7ldhgds8tq" path="res://sandbox/low_poly_door.tscn" id="2_23vci"]
 [ext_resource type="PackedScene" uid="uid://7w6e8uro5suv" path="res://sandbox/maze_simple.tscn" id="4_4kkuv"]
 [ext_resource type="PackedScene" uid="uid://w325xoqtcgsp" path="res://sandbox/corridor.tscn" id="4_v1oyu"]
+[ext_resource type="PackedScene" uid="uid://1v8j83wuvyjg" path="res://sandbox/door.tscn" id="5_sct73"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l0mhf"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -42,7 +43,7 @@ mesh = SubResource("PlaneMesh_0mwgj")
 shape = SubResource("ConcavePolygonShape3D_sbgtm")
 
 [node name="TestPlayer" parent="." instance=ExtResource("1_tmmk3")]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 1.32988, 3.86786, 0.349293)
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 12.3299, 0.86786, 0.349293)
 
 [node name="Doordrag" parent="." instance=ExtResource("2_23vci")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26478, 1.12304, -0.640574)
@@ -64,3 +65,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 
 
 [node name="maze-simple" parent="." instance=ExtResource("4_4kkuv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10, 0, -2)
+
+[node name="doortest" parent="." instance=ExtResource("5_sct73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 1)
+
+[node name="doortest2" parent="." instance=ExtResource("5_sct73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
+
+[node name="doortest3" parent="." instance=ExtResource("5_sct73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1)
+
+[node name="doortest4" parent="." instance=ExtResource("5_sct73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
