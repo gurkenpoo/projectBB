@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://buh8eqtsq82mj"]
+
+[ext_resource type="PackedScene" uid="uid://2n3xnoc2ee27" path="res://primitives/maze_X.blend" id="1_iuc3m"]
+[ext_resource type="PackedScene" uid="uid://dk6y02qlvecci" path="res://primitives/windows.blend" id="2_avvr1"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="maze_X" parent="." instance=ExtResource("1_iuc3m")]
+
+[node name="windows" parent="." instance=ExtResource("2_avvr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)

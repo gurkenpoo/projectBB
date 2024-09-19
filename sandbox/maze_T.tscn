@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7wd8mgi1r6cw"]
+
+[ext_resource type="PackedScene" uid="uid://cmrkay38volpn" path="res://primitives/maze_T.blend" id="1_skqv8"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="maze_T" parent="." instance=ExtResource("1_skqv8")]

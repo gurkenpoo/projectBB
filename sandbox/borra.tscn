@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqlh1bmj5hjlu"]
+
+[ext_resource type="PackedScene" uid="uid://xc2oyhk77jqb" path="res://sandbox/test_room.tscn" id="1_8ggjl"]
+[ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="2_1giif"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" parent="." instance=ExtResource("1_8ggjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="TestPlayer" parent="." instance=ExtResource("2_1giif")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 3, 0.8, -2)
