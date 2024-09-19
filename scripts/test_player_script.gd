@@ -91,4 +91,4 @@ func maintainInteraction():
 		var forceDirection = interactpos.global_transform.origin - heldObject.global_transform.origin
 		forceDirection = forceDirection.normalized()
 
-		heldObject.apply_central_force(forceDirection * 5)
+		heldObject.apply_central_force(forceDirection * 1)
