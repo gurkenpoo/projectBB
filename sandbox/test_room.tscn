@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://do7sf2rvropil" path="res://sandbox/maze_X.tscn" id="8_78qus"]
 [ext_resource type="PackedScene" path="res://sandbox/corridor_X.tscn" id="9_wifqm"]
 [ext_resource type="PackedScene" path="res://sandbox/corridor_L.tscn" id="10_fy28v"]
-[ext_resource type="AudioStream" uid="uid://jwrv5cvpby6c" path="res://sounds/the-scream-of-a-demonic-woman.mp3" id="10_ibs53"]
 [ext_resource type="AudioStream" uid="uid://byq7ubtrha75b" path="res://sounds/a-tense-scary-atmosphere.mp3" id="11_f1vbc"]
+[ext_resource type="AudioStream" uid="uid://bbohv645f0nr7" path="res://sounds/jumpscare-2-206591.mp3" id="11_s4y53"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l0mhf"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -121,9 +121,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37021, 0, 0.154733)
 shape = SubResource("SphereShape3D_4t0cv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_ibs53")
-volume_db = 10.0
+stream = ExtResource("11_s4y53")
+volume_db = 8.0
 pitch_scale = 0.97
+mix_target = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
