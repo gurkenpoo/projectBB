@@ -1,7 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://xc2oyhk77jqb"]
+[gd_scene load_steps=9 format=3 uid="uid://xc2oyhk77jqb"]
 
 [ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="1_a6d6m"]
 [ext_resource type="PackedScene" uid="uid://cffak7glrwrx0" path="res://sandbox/door_test.tscn" id="2_wy0s3"]
+[ext_resource type="PackedScene" uid="uid://b2x7ldhgds8tq" path="res://sandbox/doordrag.tscn" id="3_u8ukf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l0mhf"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ameee"]
+sky_material = SubResource("ProceduralSkyMaterial_l0mhf")
+
+[sub_resource type="Environment" id="Environment_5q4s0"]
+background_mode = 2
+sky = SubResource("Sky_ameee")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0mwgj"]
 size = Vector2(10, 10)
@@ -10,6 +24,9 @@ size = Vector2(10, 10)
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5q4s0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_0mwgj")
@@ -23,3 +40,7 @@ shape = SubResource("ConcavePolygonShape3D_sbgtm")
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.35807, 0.8, 1.5867)
 
 [node name="doortest" parent="." instance=ExtResource("2_wy0s3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.0414165, 0)
+
+[node name="Doordrag" parent="." instance=ExtResource("3_u8ukf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26478, 1.12304, -0.640574)

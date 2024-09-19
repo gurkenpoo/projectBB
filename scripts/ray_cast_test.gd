@@ -8,11 +8,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if is_colliding():
+	# if is_colliding():
 		# print(get_collider().name)
-		var objetoDeColision = get_collider();
-		if objetoDeColision.has_method("interaction") && Input.is_action_just_pressed("action"):
-			objetoDeColision.interaction()
+		#var objetoDeColision = get_collider();
+		#if objetoDeColision.has_method("interaction") && Input.is_action_just_pressed("action"):
+		#	objetoDeColision.interaction()
 
 	#else :
 		# print("sin colision")
