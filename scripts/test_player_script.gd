@@ -3,11 +3,10 @@ extends CharacterBody3D
 
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/PhysicsRaycast
-# @onready var animation_player = get_node("../scene/projectBB/Door_Group/AnimationPlayer")
 @onready var interactpos = $Camera3D/PhysicsRaycast/InteractPos
 
 
-var isHoldingObject = false;
+var isHoldingObject : bool = false;
 var heldObject = null;
 
 
@@ -15,7 +14,7 @@ const SPEED = 1.0;
 const JUMP_VELOCITY = 2.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = 20.0
+var gravity : float = 9.8
 
 func _ready():
 	
@@ -76,6 +75,7 @@ func interactWithDoor():
 		raycast.force_raycast_update()
 
 		if raycast.is_colliding():
+			print(raycast.get_collider())
 			var collider = raycast.get_collider()
 			if collider.is_in_group("door"):
 				isHoldingObject = true
@@ -91,4 +91,4 @@ func maintainInteraction():
 		var forceDirection = interactpos.global_transform.origin - heldObject.global_transform.origin
 		forceDirection = forceDirection.normalized()
 
-		heldObject.apply_central_force(forceDirection * 1)
+		heldObject.apply_central_force(forceDirection * 5)

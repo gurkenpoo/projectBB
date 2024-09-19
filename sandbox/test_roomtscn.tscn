@@ -37,7 +37,7 @@ mesh = SubResource("PlaneMesh_0mwgj")
 shape = SubResource("ConcavePolygonShape3D_sbgtm")
 
 [node name="TestPlayer" parent="." instance=ExtResource("1_a6d6m")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.35807, 0.8, 1.5867)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.0797255, 0.8, 2.89301)
 
 [node name="doortest" parent="." instance=ExtResource("2_wy0s3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.0414165, 0)

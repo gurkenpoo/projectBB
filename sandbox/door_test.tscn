@@ -13,8 +13,10 @@ points = PackedVector3Array(-0.025, -1, -0.025, -0.025, -1, 0.025, -0.025, 1, -0
 [node name="Door-rigid" parent="Door_Group/DoorFrame" index="0" groups=["door"]]
 collision_layer = 8
 collision_mask = 15
+mass = 0.5
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Door_Group/DoorFrame" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38241, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Door_Group/DoorFrame/StaticBody3D2" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.385739, 1.05667, -0.00796586)
@@ -25,9 +27,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.385739, 1.05667, -0.0079658
 shape = SubResource("ConvexPolygonShape3D_fubtw")
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="Door_Group" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1.31134e-07, -1, 0, 1, 1.31134e-07, 0.35877, 1.00788, -0.00830698)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.377641, 0.907928, 0.0173764)
 node_a = NodePath("../DoorFrame/Door-rigid")
-node_b = NodePath("../DoorFrame/StaticBody3D2")
+node_b = NodePath("../DoorFrame/StaticBody3D")
+params/bias = 0.99
 angular_limit/enable = true
 angular_limit/upper = 0.0
-angular_limit/lower = -1.74533
+angular_limit/lower = -1.91986
+angular_limit/bias = 0.01
