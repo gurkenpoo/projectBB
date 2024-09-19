@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://xc2oyhk77jqb"]
+[gd_scene load_steps=14 format=3 uid="uid://xc2oyhk77jqb"]
 
 [ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="1_tmmk3"]
 [ext_resource type="PackedScene" uid="uid://b2x7ldhgds8tq" path="res://sandbox/low_poly_door.tscn" id="2_23vci"]
 [ext_resource type="PackedScene" uid="uid://7w6e8uro5suv" path="res://sandbox/maze_simple.tscn" id="4_4kkuv"]
 [ext_resource type="PackedScene" uid="uid://w325xoqtcgsp" path="res://sandbox/corridor.tscn" id="4_v1oyu"]
 [ext_resource type="PackedScene" uid="uid://1v8j83wuvyjg" path="res://sandbox/door.tscn" id="5_sct73"]
+[ext_resource type="Script" path="res://scripts/trigger_area.gd" id="6_6h0ki"]
+[ext_resource type="AudioStream" uid="uid://buyg4mndlcbjr" path="res://sounds/a-hum-in-my-head.mp3" id="7_nfy68"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l0mhf"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -24,6 +26,9 @@ size = Vector2(10, 10)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sbgtm"]
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4t0cv"]
+radius = 1.855
 
 [node name="Node3D" type="Node3D"]
 
@@ -48,32 +53,52 @@ transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 12
 [node name="Doordrag" parent="." instance=ExtResource("2_23vci")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26478, 1.12304, -0.640574)
 
-[node name="Corridor" parent="." instance=ExtResource("4_v1oyu")]
+[node name="maze" type="Node3D" parent="."]
+
+[node name="Corridor" parent="maze" instance=ExtResource("4_v1oyu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 0)
 
-[node name="Corridor2" parent="." instance=ExtResource("4_v1oyu")]
+[node name="Corridor2" parent="maze" instance=ExtResource("4_v1oyu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, 0)
 
-[node name="Corridor3" parent="." instance=ExtResource("4_v1oyu")]
+[node name="Corridor3" parent="maze" instance=ExtResource("4_v1oyu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 0, 0)
 
-[node name="Corridor4" parent="." instance=ExtResource("4_v1oyu")]
+[node name="Corridor4" parent="maze" instance=ExtResource("4_v1oyu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, 0)
 
-[node name="Corridor5" parent="." instance=ExtResource("4_v1oyu")]
+[node name="Corridor5" parent="maze" instance=ExtResource("4_v1oyu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 0)
 
-[node name="maze-simple" parent="." instance=ExtResource("4_4kkuv")]
+[node name="maze-simple" parent="maze" instance=ExtResource("4_4kkuv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10, 0, -2)
 
-[node name="doortest" parent="." instance=ExtResource("5_sct73")]
+[node name="doortest" parent="maze" instance=ExtResource("5_sct73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 1)
 
-[node name="doortest2" parent="." instance=ExtResource("5_sct73")]
+[node name="doortest2" parent="maze" instance=ExtResource("5_sct73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
 
-[node name="doortest3" parent="." instance=ExtResource("5_sct73")]
+[node name="doortest3" parent="maze" instance=ExtResource("5_sct73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1)
 
-[node name="doortest4" parent="." instance=ExtResource("5_sct73")]
+[node name="doortest4" parent="maze" instance=ExtResource("5_sct73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2329, 0, 2.27793)
+script = ExtResource("6_6h0ki")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72979, 0, 0.654733)
+shape = SubResource("SphereShape3D_4t0cv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nfy68")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="Area3D" method="_on_timer_timeout"]
