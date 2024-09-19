@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="ProjectBB"
-run/main_scene="res://sandbox/test_scene.tscn"
+run/main_scene="res://sandbox/test_bedroom.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=240
+window/size/window_width_override=1280
+window/size/window_height_override=960
+window/stretch/mode="viewport"
 
 [file_customization]
 

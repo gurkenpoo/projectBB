@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://xc2oyhk77jqb"]
+
+[ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="1_tmmk3"]
+[ext_resource type="PackedScene" uid="uid://b2x7ldhgds8tq" path="res://sandbox/low_poly_door.tscn" id="2_23vci"]
+[ext_resource type="PackedScene" uid="uid://7w6e8uro5suv" path="res://sandbox/maze_simple.tscn" id="4_4kkuv"]
+[ext_resource type="PackedScene" uid="uid://w325xoqtcgsp" path="res://sandbox/corridor.tscn" id="4_v1oyu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l0mhf"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ameee"]
+sky_material = SubResource("ProceduralSkyMaterial_l0mhf")
+
+[sub_resource type="Environment" id="Environment_5q4s0"]
+background_mode = 2
+sky = SubResource("Sky_ameee")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0mwgj"]
+size = Vector2(10, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sbgtm"]
+data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.295708, -0.367109, 0.881923, 0, 0.92321, 0.384295, -0.955278, -0.113639, 0.273001, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5q4s0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_0mwgj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_sbgtm")
+
+[node name="TestPlayer" parent="." instance=ExtResource("1_tmmk3")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 1.32988, 3.86786, 0.349293)
+
+[node name="Doordrag" parent="." instance=ExtResource("2_23vci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26478, 1.12304, -0.640574)
+
+[node name="Corridor" parent="." instance=ExtResource("4_v1oyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 0)
+
+[node name="Corridor2" parent="." instance=ExtResource("4_v1oyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, 0)
+
+[node name="Corridor3" parent="." instance=ExtResource("4_v1oyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 0, 0)
+
+[node name="Corridor4" parent="." instance=ExtResource("4_v1oyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, 0)
+
+[node name="Corridor5" parent="." instance=ExtResource("4_v1oyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 0)
+
+[node name="maze-simple" parent="." instance=ExtResource("4_4kkuv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10, 0, -2)

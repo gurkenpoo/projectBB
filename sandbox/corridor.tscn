@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbm3m6a7nefxh"]
+[gd_scene load_steps=2 format=3 uid="uid://w325xoqtcgsp"]
 
 [ext_resource type="PackedScene" uid="uid://wpoo3yxyfnjf" path="res://primitives/corridor.blend" id="1_qvsaq"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Corridor" type="Node3D"]
 
 [node name="corridor" parent="." instance=ExtResource("1_qvsaq")]

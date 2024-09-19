@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bqcyjoyv0rlqv"
-path="res://.godot/imported/projectBB.blend-45b1b72a5a3675f25d242d75aa4ddd57.scn"
+path="res://.godot/imported/sandbox_room.blend-91eb952195e9679b9e4744e3af9441fc.scn"
 
 [deps]
 
-source_file="res://primitives/projectBB.blend"
-dest_files=["res://.godot/imported/projectBB.blend-45b1b72a5a3675f25d242d75aa4ddd57.scn"]
+source_file="res://primitives/sandbox_room.blend"
+dest_files=["res://.godot/imported/sandbox_room.blend-91eb952195e9679b9e4744e3af9441fc.scn"]
 
 [params]
 

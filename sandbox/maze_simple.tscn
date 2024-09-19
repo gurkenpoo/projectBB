@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://jo8bdi61a1p"]
+[gd_scene load_steps=2 format=3 uid="uid://7w6e8uro5suv"]
 
 [ext_resource type="PackedScene" uid="uid://ctvl5yhqr8ise" path="res://primitives/maze-simple.blend" id="1_u6tqj"]
 
-[node name="Node3D" type="Node3D"]
+[node name="maze-simple" type="Node3D"]
 
 [node name="maze-simple" parent="." instance=ExtResource("1_u6tqj")]

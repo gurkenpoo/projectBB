@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://encq687xhidc"]
+
+[ext_resource type="PackedScene" uid="uid://cdua6br7xgrlo" path="res://objects/room.tscn" id="1_j6uf8"]
+[ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="2_ch8w5"]
+
+[node name="TestScene" type="Node3D"]
+
+[node name="scene" parent="." instance=ExtResource("1_j6uf8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Cealing" parent="scene/projectBB" index="3"]
+visible = false
+
+[node name="TestPlayer" parent="." instance=ExtResource("2_ch8w5")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.21797, 1.02178, -1.27645)
+
+[editable path="scene"]
+[editable path="scene/projectBB"]
