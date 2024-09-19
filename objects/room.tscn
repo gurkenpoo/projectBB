@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdua6br7xgrlo"]
 
-[ext_resource type="PackedScene" uid="uid://bqcyjoyv0rlqv" path="res://primitives/projectBB.blend" id="1_fxfth"]
+[ext_resource type="PackedScene" uid="uid://bqcyjoyv0rlqv" path="res://primitives/sandbox_room.blend" id="1_fxfth"]
 
 [node name="scene" type="Node3D"]
 

@@ -14,11 +14,11 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body):
 	if body.name == "CharacterBody3D":
-		ambienceSound.play();
-		print("reproduciendo sonido...")
+		timer.start()
 		print(body.name)
 
 
 func _on_timer_timeout() -> void:
-	pass
+	ambienceSound.play();
+	print("reproduciendo sonido...")
 	
