@@ -54,7 +54,7 @@ mesh = SubResource("PlaneMesh_0mwgj")
 shape = SubResource("ConcavePolygonShape3D_sbgtm")
 
 [node name="TestPlayer" parent="." instance=ExtResource("1_tmmk3")]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 4.32988, 0.86786, 9.34929)
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 4.32353, 0.883415, 17.3426)
 
 [node name="Doordrag" parent="." instance=ExtResource("2_23vci")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26478, 1.12304, -0.640574)
@@ -85,35 +85,143 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 1)
 [node name="doortest2" parent="maze" instance=ExtResource("5_sct73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
 
+[node name="doortest8" parent="maze" instance=ExtResource("5_sct73")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 6)
+
 [node name="doortest3" parent="maze" instance=ExtResource("5_sct73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1)
 
 [node name="doortest4" parent="maze" instance=ExtResource("5_sct73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
 
+[node name="doortest5" parent="maze" instance=ExtResource("5_sct73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 18)
+
+[node name="doortest6" parent="maze" instance=ExtResource("5_sct73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 21)
+
+[node name="doortest7" parent="maze" instance=ExtResource("5_sct73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 15)
+
 [node name="Node3D" parent="maze" instance=ExtResource("8_78qus")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01228, -4.76837e-07, 19.9891)
 
 [node name="Node3D2" parent="maze" instance=ExtResource("9_wifqm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987721, -4.76837e-07, 17.9891)
 
 [node name="Corridor6" parent="maze" instance=ExtResource("4_v1oyu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122786, -4.76837e-07, 19.9891)
 
 [node name="Corridor7" parent="maze" instance=ExtResource("4_v1oyu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122786, -4.76837e-07, 20.9891)
+
+[node name="Node3D6" parent="maze" instance=ExtResource("9_wifqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01228, -4.76837e-07, 23.9891)
+
+[node name="Corridor14" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01228, -4.76837e-07, 25.9891)
+
+[node name="Corridor15" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01228, -4.76837e-07, 26.9891)
 
 [node name="Corridor8" parent="maze" instance=ExtResource("4_v1oyu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 10)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.98772, -4.76837e-07, 17.9891)
+
+[node name="Corridor9" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.01228, -4.76837e-07, 17.9891)
+
+[node name="Corridor10" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.01228, -4.76837e-07, 17.9891)
+
+[node name="Corridor11" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01228, -4.76837e-07, 20.9891)
+
+[node name="Corridor12" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01228, -4.76837e-07, 21.9891)
+
+[node name="Corridor13" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01228, -4.76837e-07, 14.9891)
 
 [node name="Node3D3" parent="maze" instance=ExtResource("9_wifqm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98772, -4.76837e-07, 17.9891)
 
 [node name="Node3D4" parent="maze" instance=ExtResource("10_fy28v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98772, -4.76837e-07, 14.9891)
+
+[node name="Node3D9" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.01228, -4.76837e-07, 21.9891)
+
+[node name="Node3D10" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.01228, -4.76837e-07, 21.9891)
+
+[node name="Node3D11" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 13.0123, -4.76837e-07, 18.9891)
+
+[node name="Node3D7" parent="maze" instance=ExtResource("9_wifqm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.0123, -4.76837e-07, 19.9891)
+
+[node name="Node3D8" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.0123, -4.76837e-07, 22.9891)
+
+[node name="Node3D13" parent="maze" instance=ExtResource("9_wifqm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.987721, -4.76837e-07, 19.9891)
+
+[node name="Node3D14" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.987721, -4.76837e-07, 22.9891)
+
+[node name="Node3D5" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01228, -4.76837e-07, 17.9891)
+
+[node name="Node3D12" parent="maze" instance=ExtResource("9_wifqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 18)
+
+[node name="Corridor16" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, 18)
+
+[node name="Corridor17" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 21)
+
+[node name="Corridor18" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22)
+
+[node name="Node3D15" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 22)
+
+[node name="Node3D16" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 25)
+
+[node name="Corridor19" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 14)
+
+[node name="Corridor20" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 13)
+
+[node name="Node3D17" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 11)
+
+[node name="Node3D18" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.01703)
+
+[node name="Node3D19" parent="maze" instance=ExtResource("9_wifqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+
+[node name="Node3D20" parent="maze" instance=ExtResource("9_wifqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 11)
+
+[node name="Node3D21" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 12)
+
+[node name="Node3D22" parent="maze" instance=ExtResource("10_fy28v")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 13)
+
+[node name="Node3D23" parent="maze" instance=ExtResource("9_wifqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 7.97538)
+
+[node name="Corridor21" parent="maze" instance=ExtResource("4_v1oyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2329, 0, 9.27793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0686, 0, 12.3255)
 script = ExtResource("6_6h0ki")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
@@ -133,6 +241,9 @@ one_shot = true
 [node name="AtmoSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_f1vbc")
 volume_db = 12.0
+
+[node name="Corridor" parent="." instance=ExtResource("4_v1oyu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 21)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="Area3D" method="_on_timer_timeout" flags=6]
