@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c03wcuvnadjc5"
+path="res://.godot/imported/deadbolt lock.mp3-89d82d12680ba6ff30cc32f4f5083172.mp3str"
+
+[deps]
+
+source_file="res://sounds/deadbolt lock.mp3"
+dest_files=["res://.godot/imported/deadbolt lock.mp3-89d82d12680ba6ff30cc32f4f5083172.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

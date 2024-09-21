@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://xc2oyhk77jqb"]
+[gd_scene load_steps=19 format=3 uid="uid://xc2oyhk77jqb"]
 
 [ext_resource type="Script" path="res://sandbox/test_room.gd" id="1_76wt0"]
 [ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="1_tmmk3"]
@@ -13,6 +13,25 @@
 [ext_resource type="AudioStream" uid="uid://byq7ubtrha75b" path="res://sounds/a-tense-scary-atmosphere.mp3" id="11_f1vbc"]
 [ext_resource type="AudioStream" uid="uid://bbohv645f0nr7" path="res://sounds/jumpscare-2-206591.mp3" id="11_s4y53"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b87ux"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_2eeiw"]
+sky_material = SubResource("ProceduralSkyMaterial_b87ux")
+
+[sub_resource type="Environment" id="Environment_tnhgr"]
+background_mode = 2
+sky = SubResource("Sky_2eeiw")
+ambient_light_color = Color(0.891024, 0.802043, 0.501266, 1)
+ambient_light_energy = 0.02
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.406344, 0.348133, 0.143349, 1)
+fog_light_energy = 0.47
+fog_density = 0.2
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_0mwgj"]
 size = Vector2(10, 10)
 
@@ -24,6 +43,9 @@ radius = 1.0
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_76wt0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tnhgr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_0mwgj")
@@ -61,6 +83,18 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10, 0,
 
 [node name="doortest" parent="maze" instance=ExtResource("5_sct73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 1)
+
+[node name="doortest9" parent="maze" instance=ExtResource("5_sct73")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 17)
+
+[node name="doortest10" parent="maze" instance=ExtResource("5_sct73")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4, 0, 15)
+
+[node name="doortest11" parent="maze" instance=ExtResource("5_sct73")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 2, 0, 18)
+
+[node name="doortest12" parent="maze" instance=ExtResource("5_sct73")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 5, 0, 20)
 
 [node name="doortest2" parent="maze" instance=ExtResource("5_sct73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)

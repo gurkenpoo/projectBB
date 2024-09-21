@@ -35,6 +35,7 @@ debug_shape_thickness = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16445, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/Camera3D"]
-spot_range = 6.67356
-spot_angle = 19.9142
+light_color = Color(0.891024, 0.802043, 0.501266, 1)
+spot_range = 11.0159
+spot_angle = 29.0023
 spot_angle_attenuation = 1.10957
