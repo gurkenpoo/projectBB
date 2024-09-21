@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://xc2oyhk77jqb"]
+[gd_scene load_steps=16 format=3 uid="uid://xc2oyhk77jqb"]
 
 [ext_resource type="Script" path="res://sandbox/test_room.gd" id="1_76wt0"]
 [ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="1_tmmk3"]
@@ -13,19 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://byq7ubtrha75b" path="res://sounds/a-tense-scary-atmosphere.mp3" id="11_f1vbc"]
 [ext_resource type="AudioStream" uid="uid://bbohv645f0nr7" path="res://sounds/jumpscare-2-206591.mp3" id="11_s4y53"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l0mhf"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_ameee"]
-sky_material = SubResource("ProceduralSkyMaterial_l0mhf")
-
-[sub_resource type="Environment" id="Environment_5q4s0"]
-background_mode = 2
-sky = SubResource("Sky_ameee")
-tonemap_mode = 2
-glow_enabled = true
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_0mwgj"]
 size = Vector2(10, 10)
 
@@ -37,13 +24,6 @@ radius = 1.0
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_76wt0")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.295708, -0.367109, 0.881923, 0, 0.92321, 0.384295, -0.955278, -0.113639, 0.273001, 0, 0, 0)
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_5q4s0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_0mwgj")
