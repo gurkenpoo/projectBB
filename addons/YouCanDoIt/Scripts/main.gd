@@ -1,5 +1,4 @@
-@tool
-extends EditorPlugin
+@tool extends EditorPlugin
 
 @export var min_interval_minutes:float = 15
 @export var max_interval_minutes:float = 30

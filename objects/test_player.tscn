@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cownu6dlwd5tf"]
+[gd_scene load_steps=7 format=3 uid="uid://cownu6dlwd5tf"]
 
 [ext_resource type="Script" path="res://scripts/test_player_script.gd" id="1_c4onl"]
 [ext_resource type="AudioStream" uid="uid://cgqfr7n5yj518" path="res://sounds/wood rattle.mp3" id="2_e8dxb"]
+[ext_resource type="Script" path="res://scripts/left_player.gd" id="3_7xp4s"]
+[ext_resource type="AudioStream" uid="uid://c03wcuvnadjc5" path="res://sounds/deadbolt lock.mp3" id="4_k7b22"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5cfwj"]
 radius = 0.3
@@ -44,7 +46,9 @@ spot_angle_attenuation = 1.10957
 
 [node name="LeftPlayer" type="AudioStreamPlayer3D" parent="CharacterBody3D/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-stream = ExtResource("2_e8dxb")
+autoplay = true
+script = ExtResource("3_7xp4s")
+SoundsArrayLeft = Array[AudioStream]([ExtResource("2_e8dxb"), ExtResource("4_k7b22")])
 
 [node name="RightPlayer" type="AudioStreamPlayer3D" parent="CharacterBody3D/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -55,8 +59,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.175, -0.014)
 current = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2.5)
 stream = ExtResource("2_e8dxb")
 volume_db = -5.0
-autoplay = true
 panning_strength = 0.0
