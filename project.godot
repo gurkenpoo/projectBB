@@ -30,6 +30,7 @@ enabled=PackedStringArray("res://addons/YouCanDoIt/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://addons/": "gray",
 "res://objects/": "yellow",
 "res://primitives/": "red",
 "res://references/": "blue",

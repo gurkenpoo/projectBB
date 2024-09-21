@@ -1,30 +1,43 @@
-# You Can Do It!
+# 🎮 Proyecto de Terror Psicológico - Inspirado en Silent Hill PT y SCP-087
 
-Anime girls motivate you every 15-30 minutes in Godot 4.
+## Descripción
 
-## Screenshots
+Este es un videojuego de terror psicológico en desarrollo inspirado en la atmósfera inquietante y perturbadora de *Silent Hill PT* y la experiencia opresiva del *SCP-087*. Nuestro objetivo es crear una experiencia que juegue con la mente del jugador, utilizando recursos visuales y sonoros para generar una sensación constante de angustia y miedo psicológico.
 
-<img src="https://github.com/Joy-less/YouCanDoIt/blob/main/Assets/YouCanDoIt%20Screenshot%201.png?raw=true" width=600 />
-<img src="https://github.com/Joy-less/YouCanDoIt/blob/main/Assets/YouCanDoIt%20Screenshot%202.png?raw=true" width=600 />
+## Características
 
-## Features
+- **Plataforma**: PC/Linux
+- **Motor**: Godot3D
+- **Lenguaje de Programación**: GDScript
+- **Herramientas de Desarrollo**: Blender3D, Krita, GIMP
+- **Estilo de Juego**: Terror psicológico en primera persona
+- **Inspiración**: *Silent Hill PT* (Kojima Productions) y *SCP-087*
 
-- Girls holding programming books
-- Nice girls to compliment you
-- Chill girls to greet you
-- Mean girls to insult you
+## Tecnologías y Herramientas
 
-## Disclaimer
+- **Godot3D**: Utilizado como motor de juego principal.
+- **Blender3D**: Creación de modelos 3D y animaciones.
+- **Krita**: Diseño y retoque de texturas y arte conceptual.
+- **GIMP**: Edición de imágenes y optimización gráfica.
+- **Linux**: Entorno de desarrollo principal.
+- **GDScript**: Lenguaje de programación utilizado para el desarrollo del juego.
 
-The girls included are not owned by the author of this repository.
-You can replace them with your own images.
-This plugin is for entertainment purposes only.
+## Equipo
 
-## Credits
+- **[Tu nombre o alias] & [Nombre o alias de tu hermano]**  
+  Ambos estamos a cargo del diseño, modelado 3D y programación del juego, combinando nuestras habilidades para crear una experiencia única de terror psicológico.
 
-- Inspired by [Anime Girl Messages](https://github.com/raphtalia/AnimeGirlMessages) by [SnakeWorl](https://www.roblox.com/users/633527)
-- [Anime Girls Holding Programming Books](https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books) by [cat-milk](https://github.com/cat-milk)
-- [Speech Bubble](https://pixabay.com/vectors/speech-bubble-speech-balloon-chat-145975) by [OpenClipart-Vectors](https://pixabay.com/users/openclipart-vectors-30363/)
-- [Nya](https://freesound.org/people/Mike_bes/sounds/336012) by [Mike_bes](https://freesound.org/people/Mike_bes)
-- [Hello](https://freesound.org/people/miiumiiu/sounds/550890) & [Hi](https://freesound.org/people/miiumiiu/sounds/550889) by [miiumiiu](https://freesound.org/people/miiumiiu)
-- [Pop](https://freesound.org/people/Vilkas_Sound/sounds/463393) by [Vilkas_Sound](https://freesound.org/people/Vilkas_Sound)
+## Estado Actual
+
+Nos encontramos en la fase de desarrollo temprano, trabajando en la creación de los entornos y las primeras mecánicas básicas del juego. Nuestra visión es crear una atmósfera única y terrorífica, donde la narrativa y los elementos visuales jueguen un papel fundamental para sumergir al jugador en una experiencia de miedo y tensión.
+
+## Cómo Contribuir
+
+Este proyecto es actualmente cerrado para contribuciones externas, pero planeamos compartir avances en el futuro. Mantente al tanto de nuestras actualizaciones en GitHub para seguir el progreso.
+
+## Contacto
+
+Si tienes preguntas o sugerencias, no dudes en contactarnos:
+
+- **GitHub**: [Tu perfil de GitHub](https://github.com/gurkenpoo)
+- **Email**: [Tu email]
