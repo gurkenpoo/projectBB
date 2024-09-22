@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var camera = $Camera3D
 @onready var raycast = $Camera3D/PhysicsRaycast
 @onready var interactpos = $Camera3D/PhysicsRaycast/InteractPos
+@onready var bloodyCursor : Sprite2D = $Camera3D/Sprite2D/BloodCursor
 
 
 var isHoldingObject : bool = false;
@@ -19,6 +20,7 @@ var gravity : float = 9.8
 func _ready():
 	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	bloodyCursor.hide()
 	camera.current = true
 	
 
@@ -28,8 +30,8 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * .005)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 		
-	if Input.is_action_just_pressed("action"):
-		print("hola")
+	#if Input.is_action_just_pressed("action"):
+	#	print("hola")
 		
 	if Input.is_action_pressed("ui_cancel"):
 		print("Saliendo...")
@@ -39,6 +41,7 @@ func _unhandled_input(event):
 		
 func _physics_process(delta) -> void:
 	# Añadir gravedad.
+	showCursor()
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -63,7 +66,7 @@ func _physics_process(delta) -> void:
 		if col.get_collider() is RigidBody3D:
 			col.get_collider().apply_central_impulse(-col.get_normal() * 0.3)
 			col.get_collider().apply_impulse(-col.get_normal() * 0.01, col.get_position())
-
+	
 	if Input.is_action_just_pressed("hold"):
 		print("agarrar")
 		interactWithDoor()
@@ -84,6 +87,7 @@ func interactWithDoor():
 			if collider.is_in_group("door"):
 				isHoldingObject = true
 				heldObject = collider
+				collider.emit_signal("play_bolt_sound")
 
 func releaseObject():
 	if isHoldingObject:
@@ -96,3 +100,14 @@ func maintainInteraction():
 		forceDirection = forceDirection.normalized()
 
 		heldObject.apply_central_force(forceDirection * 10)
+		
+func showCursor():
+	bloodyCursor.hide()
+	raycast.force_raycast_update()
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		if collider.is_in_group("door"):
+			bloodyCursor.show()
+		
+	
+	

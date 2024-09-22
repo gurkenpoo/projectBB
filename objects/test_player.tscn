@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cownu6dlwd5tf"]
+[gd_scene load_steps=8 format=3 uid="uid://cownu6dlwd5tf"]
 
 [ext_resource type="Script" path="res://scripts/test_player_script.gd" id="1_c4onl"]
 [ext_resource type="AudioStream" uid="uid://cgqfr7n5yj518" path="res://sounds/wood rattle.mp3" id="2_e8dxb"]
-[ext_resource type="Script" path="res://scripts/left_player.gd" id="3_7xp4s"]
 [ext_resource type="AudioStream" uid="uid://c03wcuvnadjc5" path="res://sounds/deadbolt lock.mp3" id="4_k7b22"]
+[ext_resource type="Texture2D" uid="uid://d3sgkkdoek85s" path="res://references/blood_cursor.png" id="4_q87oy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5cfwj"]
 radius = 0.3
@@ -12,6 +12,11 @@ height = 1.7
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ybovw"]
 radius = 0.3
 height = 1.7
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p86ux"]
+streams_count = 2
+stream_0/stream = ExtResource("2_e8dxb")
+stream_1/stream = ExtResource("4_k7b22")
 
 [node name="TestPlayer" type="Node3D"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.8, 0)
@@ -30,13 +35,13 @@ transform = Transform3D(1.42857, 0, 0, 0, 1.42857, 0, 0, 0, 1.42857, 0, 0.75, 0)
 fov = 90.0
 
 [node name="PhysicsRaycast" type="RayCast3D" parent="CharacterBody3D/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.572)
-target_position = Vector3(0, -2, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.076706)
+target_position = Vector3(0, -1.1, 0)
 collision_mask = 15
 debug_shape_thickness = 3
 
 [node name="InteractPos" type="Marker3D" parent="CharacterBody3D/Camera3D/PhysicsRaycast"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16445, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.356454, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/Camera3D"]
 light_color = Color(0.891024, 0.802043, 0.501266, 1)
@@ -46,9 +51,8 @@ spot_angle_attenuation = 1.10957
 
 [node name="LeftPlayer" type="AudioStreamPlayer3D" parent="CharacterBody3D/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+stream = SubResource("AudioStreamRandomizer_p86ux")
 autoplay = true
-script = ExtResource("3_7xp4s")
-SoundsArrayLeft = Array[AudioStream]([ExtResource("2_e8dxb"), ExtResource("4_k7b22")])
 
 [node name="RightPlayer" type="AudioStreamPlayer3D" parent="CharacterBody3D/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -63,3 +67,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2.5)
 stream = ExtResource("2_e8dxb")
 volume_db = -5.0
 panning_strength = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody3D/Camera3D"]
+
+[node name="BloodCursor" type="Sprite2D" parent="CharacterBody3D/Camera3D/Sprite2D"]
+position = Vector2(240, 160)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("4_q87oy")

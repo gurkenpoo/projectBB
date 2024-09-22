@@ -1,11 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://1v8j83wuvyjg"]
+[gd_scene load_steps=4 format=3 uid="uid://1v8j83wuvyjg"]
 
 [ext_resource type="PackedScene" uid="uid://ewmkg2ok3rd0" path="res://primitives/doortest.blend" id="1_rdwqh"]
+[ext_resource type="Script" path="res://scripts/door_script.gd" id="2_a3h4a"]
+[ext_resource type="AudioStream" uid="uid://c03wcuvnadjc5" path="res://sounds/deadbolt lock.mp3" id="3_exjip"]
 
 [node name="doortest" instance=ExtResource("1_rdwqh")]
 
 [node name="door-rigid" parent="door_frame" index="0" groups=["door"]]
 mass = 0.5
+script = ExtResource("2_a3h4a")
+
+[node name="BoltLock" type="AudioStreamPlayer3D" parent="door_frame/door-rigid" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072851, 1, -0.11117)
+stream = ExtResource("3_exjip")
+volume_db = -9.0
+max_distance = 5.0
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 0.791699, -0.947765)
