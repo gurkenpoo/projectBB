@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://7m3mdrynnsi4"]
+
+[ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="1_57vhq"]
+[ext_resource type="PackedScene" uid="uid://ba2vwm85wwgw" path="res://primitives/new_maze/grid_map.tscn" id="2_rtvvc"]
+[ext_resource type="PackedScene" uid="uid://1v8j83wuvyjg" path="res://sandbox/door.tscn" id="3_xsx6o"]
+
+[node name="test_room_01" type="Node3D"]
+
+[node name="GridMap" parent="." instance=ExtResource("2_rtvvc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0266236, 0, 0.488222)
+data = {
+"cells": PackedInt32Array(65534, 1, 655360, 65533, 1, 655360, 65532, 1, 655360, 65531, 1, 655360, 65530, 1, 655360, 65529, 1, 655366, 131066, 65535, 655360, 131067, 65535, 655360, 131069, 65535, 655360, 131070, 65535, 655360, 131071, 65535, 655360, 65536, 65535, 655360, 65537, 65535, 655360, 65535, 1, 6, 131070, 3, 0, 131069, 3, 0, 131068, 3, 0, 131067, 3, 655364, 131067, 4, 1048576, 131067, 5, 1048576, 131067, 6, 1441796, 131068, 6, 655360, 131069, 6, 655360, 131070, 6, 655360, 131071, 6, 655360, 65536, 6, 655360, 65537, 6, 655360, 65538, 6, 655360, 65539, 6, 4, 65539, 5, 1441792, 65539, 4, 1441792, 65539, 3, 1441792, 65539, 2, 1441792, 65539, 1, 1441792, 65539, 0, 1441792, 65538, 65535, 655360, 65539, 65535, 1048580, 131068, 65535, 2)
+}
+
+[node name="doortest" parent="." instance=ExtResource("3_xsx6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84222, 2.4733, 0.247676)
+
+[node name="TestPlayer" parent="." instance=ExtResource("1_57vhq")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 3.14981, 0)

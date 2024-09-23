@@ -5,7 +5,7 @@ extends CharacterBody3D
 @onready var raycast = $Camera3D/PhysicsRaycast
 @onready var interactpos = $Camera3D/PhysicsRaycast/InteractPos
 @onready var bloodyCursor : Sprite2D = $Camera3D/Sprite2D/BloodCursor
-
+@onready var head : Node3D = $".."
 
 var isHoldingObject : bool = false;
 var heldObject = null;
@@ -50,28 +50,32 @@ func _physics_process(delta) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	# Obtener dirección de input y manejar movimiento/desaceleración.
-	var input_dir = Input.get_vector("arriba", "abajo", "derecha", "izquierda")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction = (camera.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if is_on_floor():
+		if direction:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+		else:
+			velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 10.0)
+			velocity.z = lerp(velocity.z, direction.z * SPEED, delta * 10.0)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 4.0)
+		velocity.z = lerp(velocity.z, direction.z * SPEED, delta * 4.0)
 
 	move_and_slide()
 	
-	for col_idx in get_slide_collision_count():
-		var col := get_slide_collision(col_idx)
-		if col.get_collider() is RigidBody3D:
-			col.get_collider().apply_central_impulse(-col.get_normal() * 0.3)
-			col.get_collider().apply_impulse(-col.get_normal() * 0.01, col.get_position())
+	#for col_idx in get_slide_collision_count():
+	#	var col := get_slide_collision(col_idx)
+	#	if col.get_collider() is RigidBody3D:
+	#		col.get_collider().apply_central_impulse(-col.get_normal() * 0.3)
+	#		col.get_collider().apply_impulse(-col.get_normal() * 0.01, col.get_position())
 	
-	if Input.is_action_just_pressed("hold"):
+	if Input.is_action_just_pressed("interact"):
 		print("agarrar")
 		interactWithDoor()
 	
-	elif Input.is_action_just_released("hold"):
+	elif Input.is_action_just_released("interact"):
 		print("soltar")
 		releaseObject()
 

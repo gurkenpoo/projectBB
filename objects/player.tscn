@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1oyn7gsbwp8a"]
+
+[ext_resource type="Script" path="res://objects/player_script.gd" id="1_r0opv"]
+[ext_resource type="Script" path="res://objects/camera_3d.gd" id="1_r57fn"]
+[ext_resource type="Texture2D" uid="uid://d3sgkkdoek85s" path="res://references/blood_cursor.png" id="3_j46mc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g1iwu"]
+radius = 0.3
+height = 1.7
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_av26c"]
+radius = 0.3
+height = 1.7
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_r0opv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+mesh = SubResource("CapsuleMesh_g1iwu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_av26c")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+script = ExtResource("1_r57fn")
+
+[node name="RayCast3D" type="RayCast3D" parent="head/Camera3D"]
+target_position = Vector3(0, 0, -2)
+collision_mask = 15
+
+[node name="Marker3D" type="Marker3D" parent="head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
+
+[node name="BloodyCursor" type="Sprite2D" parent="head/Camera3D"]
+position = Vector2(240, 160)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_j46mc")
