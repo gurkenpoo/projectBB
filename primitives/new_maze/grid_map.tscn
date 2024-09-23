@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgtbin1byjx8w"]
+[gd_scene load_steps=3 format=3 uid="uid://ba2vwm85wwgw"]
 
-[ext_resource type="MeshLibrary" uid="uid://d2bu0rrmo4ium" path="res://primitives/new_maze/maze.tres" id="1_euaca"]
+[ext_resource type="MeshLibrary" uid="uid://b1gxoslhh3y0f" path="res://primitives/new_maze/maze.tres" id="1_euaca"]
+[ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="2_eovd2"]
 
 [node name="GridMap" type="GridMap"]
 mesh_library = ExtResource("1_euaca")
@@ -10,3 +11,6 @@ data = {
 "cells": PackedInt32Array(65534, 1, 655360, 65533, 1, 655360, 65532, 1, 655360, 65531, 1, 655360, 65530, 1, 655360, 65529, 1, 655366, 131066, 65535, 655360, 131067, 65535, 655360, 131068, 65535, 655360, 131069, 65535, 655360, 131070, 65535, 655360, 131071, 65535, 655360, 65536, 65535, 655360, 65537, 65535, 655360, 65535, 1, 6, 131070, 3, 0, 131069, 3, 0, 131068, 3, 0, 131067, 3, 655364, 131067, 4, 1048576, 131067, 5, 1048576, 131067, 6, 1441796, 131068, 6, 655360, 131069, 6, 655360, 131070, 6, 655360, 131071, 6, 655360, 65536, 6, 655360, 65537, 6, 655360, 65538, 6, 655360, 65539, 6, 4, 65539, 5, 1441792, 65539, 4, 1441792, 65539, 3, 1441792, 65539, 2, 1441792, 65539, 1, 1441792, 65539, 0, 1441792, 65538, 65535, 655360, 65539, 65535, 1048580)
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="TestPlayer" parent="." instance=ExtResource("2_eovd2")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 5.5, 3.4479, 2.22611)
