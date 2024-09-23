@@ -1,20 +1,17 @@
-[gd_scene load_steps=22 format=3 uid="uid://xc2oyhk77jqb"]
+[gd_scene load_steps=19 format=3 uid="uid://xc2oyhk77jqb"]
 
 [ext_resource type="Script" path="res://sandbox/test_room.gd" id="1_76wt0"]
 [ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="1_tmmk3"]
-[ext_resource type="PackedScene" uid="uid://b2x7ldhgds8tq" path="res://sandbox/low_poly_door.tscn" id="2_23vci"]
-[ext_resource type="PackedScene" uid="uid://7w6e8uro5suv" path="res://sandbox/maze_simple.tscn" id="4_4kkuv"]
+[ext_resource type="PackedScene" path="res://sandbox/low_poly_door.tscn" id="2_23vci"]
+[ext_resource type="PackedScene" path="res://sandbox/maze_simple.tscn" id="4_4kkuv"]
 [ext_resource type="PackedScene" uid="uid://w325xoqtcgsp" path="res://sandbox/corridor.tscn" id="4_v1oyu"]
 [ext_resource type="PackedScene" uid="uid://1v8j83wuvyjg" path="res://sandbox/door.tscn" id="5_sct73"]
 [ext_resource type="Script" path="res://scripts/trigger_area.gd" id="6_6h0ki"]
 [ext_resource type="PackedScene" uid="uid://do7sf2rvropil" path="res://sandbox/maze_X.tscn" id="8_78qus"]
-[ext_resource type="PackedScene" path="res://sandbox/corridor_X.tscn" id="9_wifqm"]
-[ext_resource type="PackedScene" path="res://sandbox/corridor_L.tscn" id="10_fy28v"]
+[ext_resource type="PackedScene" uid="uid://4t3ro5p2yldc" path="res://sandbox/corridor_X.tscn" id="9_wifqm"]
+[ext_resource type="PackedScene" uid="uid://djy3jgaiyxr1u" path="res://sandbox/corridor_L.tscn" id="10_fy28v"]
 [ext_resource type="AudioStream" uid="uid://byq7ubtrha75b" path="res://sounds/a-tense-scary-atmosphere.mp3" id="11_f1vbc"]
 [ext_resource type="AudioStream" uid="uid://bbohv645f0nr7" path="res://sounds/jumpscare-2-206591.mp3" id="11_s4y53"]
-[ext_resource type="PackedScene" path="res://primitives/new_maze/maze_I.tscn" id="13_t8kyk"]
-[ext_resource type="PackedScene" path="res://primitives/new_maze/maze_H.tscn" id="14_4sip5"]
-[ext_resource type="PackedScene" path="res://primitives/new_maze/maze_O.tscn" id="15_168mq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b87ux"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -267,36 +264,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0,
 
 [node name="newMaze" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
-
-[node name="Node3D" parent="newMaze" instance=ExtResource("13_t8kyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 4)
-
-[node name="Node3D2" parent="newMaze" instance=ExtResource("14_4sip5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
-
-[node name="Node3D3" parent="newMaze" instance=ExtResource("13_t8kyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
-
-[node name="Node3D4" parent="newMaze" instance=ExtResource("15_168mq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
-
-[node name="Node3D5" parent="newMaze" instance=ExtResource("15_168mq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
-
-[node name="Node3D6" parent="newMaze" instance=ExtResource("15_168mq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
-
-[node name="Node3D7" parent="newMaze" instance=ExtResource("15_168mq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 4)
-
-[node name="Node3D8" parent="newMaze" instance=ExtResource("13_t8kyk")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, 5)
-
-[node name="Node3D9" parent="newMaze" instance=ExtResource("13_t8kyk")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, 2)
-
-[node name="Node3D10" parent="newMaze" instance=ExtResource("13_t8kyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
 
 [node name="Node3D11" type="Node3D" parent="newMaze"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
