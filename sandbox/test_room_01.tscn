@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://7m3mdrynnsi4"]
 
-[ext_resource type="PackedScene" uid="uid://cownu6dlwd5tf" path="res://objects/test_player.tscn" id="1_57vhq"]
 [ext_resource type="PackedScene" uid="uid://ba2vwm85wwgw" path="res://primitives/new_maze/grid_map.tscn" id="2_rtvvc"]
+[ext_resource type="PackedScene" uid="uid://b1oyn7gsbwp8a" path="res://objects/player.tscn" id="3_h0q7p"]
 [ext_resource type="PackedScene" uid="uid://1v8j83wuvyjg" path="res://sandbox/door.tscn" id="3_xsx6o"]
 
 [node name="test_room_01" type="Node3D"]
@@ -15,5 +15,5 @@ data = {
 [node name="doortest" parent="." instance=ExtResource("3_xsx6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84222, 2.4733, 0.247676)
 
-[node name="TestPlayer" parent="." instance=ExtResource("1_57vhq")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 3.14981, 0)
+[node name="Player" parent="." instance=ExtResource("3_h0q7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.60842, 0)
