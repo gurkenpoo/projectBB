@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ba2vwm85wwgw"]
 
-[ext_resource type="MeshLibrary" uid="uid://b1gxoslhh3y0f" path="res://primitives/new_maze/maze.tres" id="1_euaca"]
+[ext_resource type="MeshLibrary" uid="uid://bweikpyqrc8wv" path="res://primitives/new_maze/maze.tres" id="1_euaca"]
 
 [node name="GridMap" type="GridMap"]
 mesh_library = ExtResource("1_euaca")

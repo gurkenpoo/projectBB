@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgaglgjw06s3i"]
+[gd_scene load_steps=2 format=3 uid="uid://b1he3nri120ql"]
 
 [ext_resource type="PackedScene" uid="uid://dq5k6xijpy741" path="res://primitives/new_maze/maze.glb" id="1_8mshv"]
 
