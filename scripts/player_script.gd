@@ -13,7 +13,7 @@ extends CharacterBody3D
 
 var speed
 const WALK_SPEED : float = 2.0
-const SPRINT_SPEED  : float = 8.0
+const SPRINT_SPEED  : float = 10.0
 const JUMP_VELOCITY : float = 2.5
 const SENSITIVITY : float = 0.0027
 
@@ -35,7 +35,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40),deg_to_rad(60))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60),deg_to_rad(60))
 	if Input.is_action_pressed("ui_cancel"):
 		print("Saliendo...")
 		get_tree().quit()
@@ -129,7 +129,7 @@ func maintainInteraction():
 		var forceDirection = marker.global_transform.origin - heldObject.global_transform.origin
 		forceDirection = forceDirection.normalized()
 		
-		heldObject.apply_central_force(forceDirection * 9)
+		heldObject.apply_central_force(forceDirection * 10)
 				
 				
 			

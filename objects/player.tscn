@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1oyn7gsbwp8a"]
+[gd_scene load_steps=7 format=3 uid="uid://b1oyn7gsbwp8a"]
 
 [ext_resource type="Script" path="res://scripts/player_script.gd" id="1_r0opv"]
 [ext_resource type="Script" path="res://scripts/camera_3d.gd" id="1_r57fn"]
 [ext_resource type="Texture2D" uid="uid://d3sgkkdoek85s" path="res://references/blood_cursor.png" id="3_j46mc"]
+[ext_resource type="PackedScene" uid="uid://b6tokdte3ommw" path="res://objects/stopwatch.tscn" id="4_gncyr"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g1iwu"]
 radius = 0.3
@@ -27,9 +28,11 @@ shape = SubResource("CapsuleShape3D_av26c")
 [node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
 
-[node name="Camera3D" type="Camera3D" parent="head"]
+[node name="Camera3D" type="Camera3D" parent="head" node_paths=PackedStringArray("stopwatch_label", "stopwatch")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.182906)
 script = ExtResource("1_r57fn")
+stopwatch_label = NodePath("Stopwatch_Label")
+stopwatch = NodePath("Stopwatch")
 
 [node name="RayCast3D" type="RayCast3D" parent="head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8)
@@ -49,3 +52,18 @@ light_color = Color(0.765061, 0.793092, 0.539143, 1)
 light_energy = 1.5
 spot_range = 8.0
 spot_angle = 19.4809
+
+[node name="Stopwatch_Label" type="Label" parent="head/Camera3D"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -85.0
+offset_bottom = 23.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+text = "00:00:000"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Stopwatch" parent="head/Camera3D" instance=ExtResource("4_gncyr")]
