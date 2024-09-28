@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://7m3mdrynnsi4"]
+[gd_scene load_steps=8 format=3 uid="uid://7m3mdrynnsi4"]
 
 [ext_resource type="PackedScene" uid="uid://ba2vwm85wwgw" path="res://primitives/new_maze/grid_map.tscn" id="2_rtvvc"]
 [ext_resource type="PackedScene" uid="uid://b1oyn7gsbwp8a" path="res://objects/player.tscn" id="3_h0q7p"]
 [ext_resource type="PackedScene" uid="uid://1v8j83wuvyjg" path="res://sandbox/door.tscn" id="3_xsx6o"]
+[ext_resource type="PackedScene" uid="uid://7l15e8l5rl7m" path="res://objects/enemy.tscn" id="4_dms8j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0sh0i"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,3 +41,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.37728, 2.40614, -23.7462)
 transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 2.60842, 0)
 BOB_FREQ = 8
 BOB_AMP = 0.02
+
+[node name="enemy" parent="." instance=ExtResource("4_dms8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54048, 2.6, -25.1637)
