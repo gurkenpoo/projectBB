@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b3srwnisfmen1"
-path="res://.godot/imported/enemy.blend-11d0e3a6d69054d6c2e32404a57adbda.scn"
+path="res://.godot/imported/enemy.blend-6cface0cb9059134cd70aafd2f7ca190.scn"
 
 [deps]
 
-source_file="res://primitives/new_maze/enemy.blend"
-dest_files=["res://.godot/imported/enemy.blend-11d0e3a6d69054d6c2e32404a57adbda.scn"]
+source_file="res://primitives/enemy.blend"
+dest_files=["res://.godot/imported/enemy.blend-6cface0cb9059134cd70aafd2f7ca190.scn"]
 
 [params]
 
