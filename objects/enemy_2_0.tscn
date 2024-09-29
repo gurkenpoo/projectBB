@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://iv4fbvfyq5lo"]
+
+[ext_resource type="PackedScene" uid="uid://c88nied1qdu2y" path="res://primitives/enemy2.0.blend" id="1_py5la"]
+
+[node name="enemy2_0" instance=ExtResource("1_py5la")]
